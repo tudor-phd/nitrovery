@@ -1,0 +1,32 @@
+.example-container {
+    height: -webkit-fill-available;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+  
+  .example-sidenav-content {
+    background-color: #33885d;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .example-sidenav {
+    height: 100%;
+    background-color: #1b4749;
+  }
+  
+  .mat-list-item{
+      color: #96B7D0;
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
+  }
+  
+  .mat-list-item:hover{
+      background-color: #91B2D1;
+      color: black
+  }
+
+  .list-item-margin{
+      margin-top: 30px
+  }

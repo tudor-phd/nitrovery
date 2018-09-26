@@ -1,0 +1,15 @@
+<mat-drawer-container class="example-container" autosize>
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a class='navbar-brand'>{{pageTitle}}</a>
+  </div>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list role="list" class="menu-tems">
+      <mat-list-item class="list-item-margin" [routerLink]="['/people']" role="listitem">People</mat-list-item>
+      <mat-list-item [routerLink]="['/companies']" role="listitem">Companies</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
