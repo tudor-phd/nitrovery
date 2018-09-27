@@ -6,21 +6,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { PeopleComponent } from './people/people.component';
+import { PeopleComponent, DialogDataInfo } from './people/people.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { FilterPipe } from './filter.pipe';
 
 const appRoutes: Routes = [
-  { path: 'home', component: AppComponent },
+  { path: '', component: PeopleComponent },
   { path: 'people', component: PeopleComponent },
   { path: 'companies', component: CompaniesComponent }
 ];
 
 @NgModule({
   declarations: [
+    DialogDataInfo,
     AppComponent,
     PeopleComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    FilterPipe
   ],
+  entryComponents: [DialogDataInfo],
   imports: [
     RouterModule.forRoot(
       appRoutes,

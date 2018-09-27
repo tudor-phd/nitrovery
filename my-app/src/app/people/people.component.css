@@ -1,0 +1,18 @@
+.people-content {
+    padding: 30px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .table-search {
+    margin-left: 23px;
+    cursor: pointer;
+  }
+
+  .example-full-width {
+    width: 100%;
+    margin-right:50px
+  }
+  

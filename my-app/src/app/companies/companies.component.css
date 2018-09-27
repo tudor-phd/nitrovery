@@ -1,0 +1,13 @@
+.companies-content {
+    padding: 30px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .table-search {
+    float: right;
+    cursor: pointer;
+  }
+  

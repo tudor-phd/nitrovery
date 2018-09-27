@@ -9,3 +9,11 @@ body{
 h1{
     color: #636363;
 }
+
+.flights-modal-margin {
+    margin-right:50px
+  }
+
+  .example-form{
+      margin-bottom: 10px;
+  }
