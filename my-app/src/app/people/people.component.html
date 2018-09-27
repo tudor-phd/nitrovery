@@ -47,7 +47,7 @@
       </table>
     </mat-tab>
     <mat-tab label="Active users">
-      <table mat-table [dataSource]="people" class="mat-elevation-z8">
+      <table mat-table [dataSource]="activePeople" class="mat-elevation-z8">
         <ng-container matColumnDef="picture">
           <th mat-header-cell *matHeaderCellDef> Picture</th>
           <td mat-cell *matCellDef="let element"> <img width="90" [src]="element.picture"/></td>
@@ -91,7 +91,7 @@
       </table>
     </mat-tab>
     <mat-tab label="Inactive users">
-      <table mat-table [dataSource]="people" class="mat-elevation-z8">
+      <table mat-table [dataSource]="inactivePeople" class="mat-elevation-z8">
         <ng-container matColumnDef="picture">
           <th mat-header-cell *matHeaderCellDef> Picture</th>
           <td mat-cell *matCellDef="let element"> <img width="90" [src]="element.picture"/></td>

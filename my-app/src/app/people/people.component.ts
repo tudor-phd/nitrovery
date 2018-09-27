@@ -9,14 +9,27 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class PeopleComponent implements OnInit {
   public people: any;
+  public activePeople: any;
+  public inactivePeople: any;
   public dialogRowInfo: any;
-  constructor( public dataService: DatacollectionService, public dialog: MatDialog ) { 
+  constructor(public dataService: DatacollectionService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
     this.dataService.getPeople().subscribe((data: Array<object>) => {
-      console.log(data)
+      var active = [];
+      var inactive = [];
       this.people = data;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i]['isActive']) {
+          active.push(data[i]);
+          this.activePeople = active;
+        }
+        if (!data[i]['isActive']) {
+          inactive.push(data[i]);
+          this.inactivePeople = inactive;
+        }
+      }
     });
   }
 
@@ -37,5 +50,5 @@ export class PeopleComponent implements OnInit {
   templateUrl: 'dialogs/details-dialog.html',
 })
 export class DialogDataInfo {
-  constructor( @Inject(MAT_DIALOG_DATA) public data) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data) { }
 }
