@@ -1,26 +1,28 @@
 <h1 mat-dialog-title>Flights</h1>
 <div mat-dialog-content>
-        <mat-grid-list cols="3" rowHeight="100px">
-                <mat-grid-tile>
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Filter by city origin">
-                  </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Filter by city destination">
-                  </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                  <mat-select placeholder="Filter by company">
-                    <mat-option>None</mat-option>
-                    <mat-option>Item</mat-option>
-                  </mat-select>
-                </mat-grid-tile>
-              </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="searchOrigin" placeholder="Filter by city origin">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="searchDestination" placeholder="Filter by city destination">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-select placeholder="Filter by company" [(ngModel)]="searchCompany">
+                <mat-option></mat-option>
+                <mat-option *ngFor="let compName of data" [value]="compName.company">
+                    {{compName.company}}
+                </mat-option>
+            </mat-select>
+        </mat-grid-tile>
+    </mat-grid-list>
     <mat-grid-list cols="2" rowHeight="450px">
-       
-        <mat-grid-tile *ngFor="let element of data">
+
+        <mat-grid-tile *ngFor="let element of data  | filter : searchOrigin:searchDestination:searchCompany; let i = index">
             <mat-card>
                 <img width="90" [src]="element.cityDestinationPicture" />
                 <p>Company name: {{element.company}}</p>

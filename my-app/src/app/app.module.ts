@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PeopleComponent, DialogDataInfo } from './people/people.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
   { path: '', component: PeopleComponent },
@@ -30,6 +32,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
+    ChartsModule,
+    FormsModule,
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,

@@ -1,3 +1,11 @@
 <div class="companies-content">
-  <h1>Companies</h1>
+  <h1>Companies number per each passenger</h1>
+  <div style="display: block">
+      <canvas baseChart width="5" 
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
 </div>
