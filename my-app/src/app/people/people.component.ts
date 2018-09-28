@@ -49,12 +49,9 @@ export class PeopleComponent implements OnInit {
   selector: 'details-dialog',
   templateUrl: 'dialogs/details-dialog.html',
 })
-export class DialogDataInfo implements OnInit{
+export class DialogDataInfo {
   public searchOrigin: string;
   public searchDestination: string;
   public searchCompany: string;
   constructor(@Inject(MAT_DIALOG_DATA) public data) { }
-  ngOnInit() {
-    //this.searchText = "";
-  }
 }

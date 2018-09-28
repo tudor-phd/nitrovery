@@ -11,9 +11,36 @@ h1{
 }
 
 .flights-modal-margin {
-    margin-right:50px
+    margin-right:50px;
   }
 
   .example-form{
       margin-bottom: 10px;
+  }
+  
+  .search-company{
+    max-width: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  .search-input-modal{
+    margin-left: 10px;
+  }
+
+  .basic-container{
+    padding: 5px;
+  }
+
+  .example-card {
+    max-width: 400px;
+    margin:auto;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  .mat-dialog-content {
+    overflow: inherit!important;
   }

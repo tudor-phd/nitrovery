@@ -19,9 +19,9 @@ export class CompaniesComponent implements OnInit {
       let numComp = [];
       for (let i = 0; i < data.length; i++) {
         this.pieChartLabels.push(data[i]['name']);
-        numComp.push(data[i]['flights'].length)
+        numComp.push(data[i]['flights'].length);
       }
-      this.pieChartData = numComp
+      this.pieChartData = numComp;
     })
   }
 

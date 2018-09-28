@@ -1,30 +1,29 @@
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>X</button>
+</mat-dialog-actions>
 <h1 mat-dialog-title>Flights</h1>
 <div mat-dialog-content>
-    <mat-grid-list cols="3" rowHeight="100px">
-        <mat-grid-tile>
-            <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="searchOrigin" placeholder="Filter by city origin">
-            </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="searchDestination" placeholder="Filter by city destination">
-            </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-select placeholder="Filter by company" [(ngModel)]="searchCompany">
-                <mat-option></mat-option>
-                <mat-option *ngFor="let compName of data" [value]="compName.company">
-                    {{compName.company}}
-                </mat-option>
-            </mat-select>
-        </mat-grid-tile>
-    </mat-grid-list>
-    <mat-grid-list cols="2" rowHeight="450px">
 
-        <mat-grid-tile *ngFor="let element of data  | filter : searchOrigin:searchDestination:searchCompany; let i = index">
-            <mat-card>
-                <img width="90" [src]="element.cityDestinationPicture" />
+    <div class="basic-container">
+        <mat-form-field class="search-input-modal">
+            <input matInput [(ngModel)]="searchOrigin" placeholder="Search origin">
+        </mat-form-field>
+
+        <mat-form-field class="search-input-modal">
+            <input matInput [(ngModel)]="searchDestination" placeholder="Search destination">
+        </mat-form-field>
+
+        <mat-select class="search-company" placeholder="Search company" [(ngModel)]="searchCompany">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let compName of data" [value]="compName.company">
+                {{compName.company}}
+            </mat-option>
+        </mat-select>
+    </div>
+    <div *ngFor="let element of data  | filter : searchOrigin:searchDestination:searchCompany; let i = index">
+        <mat-card class="example-card">
+            <img mat-card-image [src]="element.cityDestinationPicture" alt="destination picture">
+            <mat-card-content>
                 <p>Company name: {{element.company}}</p>
                 <p>City-origin: {{element.cityOrigin}}</p>
                 <p>City-destination: {{element.cityDestination}}</p>
@@ -32,7 +31,9 @@
                 <p>Airport-destination: {{element.airportDestination}}</p>
                 <p>Landing date: {{element.dateLanding}}</p>
                 <p>Take off date: {{element.dateTakeOff}}</p>
-            </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
